@@ -1,4 +1,5 @@
-import { HttpPostClient } from "data/protocols/http/http-post-client";
+import { HttpPostClient } from "../../protocols/http/http-post-client";
+import { AuthenticationParams } from "../../../domain/useCases/authentication";
 
 //recebe uma url, e um http client como parametros de construtores, e com o metodo auth, faz a chamada da url a partir do http client
 export class RemoteAuthentication {
@@ -8,8 +9,11 @@ export class RemoteAuthentication {
   ) {}
   
 
-  async  auth (): Promise<void> {
-    await this.HttpPostClient.post(this.url) 
+  async auth (params: AuthenticationParams): Promise<void> {
+    await this.HttpPostClient.post({
+      url: this.url,
+      body: params
+    }) 
   }
 }
 
