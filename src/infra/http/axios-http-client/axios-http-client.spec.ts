@@ -2,7 +2,6 @@ import { AxiosHttpClient } from "./axios-http-client"
 import faker from 'faker'
 import { HttpPostParams } from "@/data/protocols/http"
 import { mockAxios } from "../test"
-import { mockPostRequest } from "@/data/test"
 import axios from 'axios'
 
 jest.mock('axios')

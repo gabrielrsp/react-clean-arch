@@ -7,7 +7,6 @@ import { HttpStatusCode } from "@/data/protocols/http/http-response"
 import { AuthenticationParams } from "@/domain/useCases"
 import { AccountModel } from "@/domain/models"
 
-
 type SutTypes = {
   sut: RemoteAuthentication
   httpPostClientSpy: HttpPostClientSpy<AuthenticationParams, AccountModel>
@@ -23,7 +22,6 @@ const makeSut = (url:string = faker.internet.url()): SutTypes => { // factory me
   }
 } 
   
-
 describe('RemoteAuthentication', () => {
   test('Should call HttpPostClient with correct URL', async () => {
 
@@ -91,6 +89,5 @@ describe('RemoteAuthentication', () => {
     
     expect(account).toEqual(httpResult)
   }) 
-
 
 })
