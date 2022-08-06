@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss'],  // qualquer mudança em arquivos desses tipos, executará um reload
+    extensions: ['.ts', '.tsx', '.js', '.scss'],  // qualquer mudança em arquivos desses tipos, executará um reload
     alias: {
       '@': path.join(__dirname, 'src')
     }
@@ -39,8 +39,10 @@ module.exports = {
     }]
   },
   devServer: {
-    contentBase: './public',
-    writeToDisk: true, //gerar bundle e rodar o server
+    devMiddleware: {
+      writeToDisk: true, //gerar bundle e rodar o server
+    },
+    static : './public',
     historyApiFallback: true  // Por padrão o webpack so escuta a rota raiz do projeto e essa propriedade PERMITE colocar qualquer rota
   },
   externals: { // tudo que fica aqui não é incluído no bundle
