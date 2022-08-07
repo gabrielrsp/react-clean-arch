@@ -44,23 +44,6 @@
   height: 100vh;
   justify-content: space-between;
 
-  .header {
-    display: flex;
-    flex-direction: column; // 1 só coluna com elementos um embaixo do outro
-    border-top: 40px solid $primaryDark;
-    background-color: $primary;
-    align-items: center;
-
-    img {
-      margin-top: 40px;
-    }
-  
-    h1 {
-      color: $white;
-      margin: 16px 0px 40px;
-    }
-  }
-
   .form {
     display: flex;
     flex-direction: column; // por padrao, vai ficar stretch (esticado)
@@ -129,9 +112,5 @@
     }
   }
 
-  .footer {
-    background-color: $primary;
-    height: 48px;
-  }
 }
 
